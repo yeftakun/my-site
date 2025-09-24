@@ -166,13 +166,15 @@ const socials = [
           <a class="btn btn-ghost" href={hero.ctaSecondary.href}>{hero.ctaSecondary.label}</a>
         </div>
       </div>
-      <div class="lg:flex-1">
+      <div class="relative lg:flex-1">
+        <div class="hexagon-bg" aria-hidden="true"></div>
         <img
           src={withBase("/images/shiroko.png")}
           alt="Shiroko placeholder"
           loading="lazy"
-          class="mx-auto max-w-[220px] drop-shadow-xl lg:max-w-[260px]"
+          class="relative z-10 mx-auto max-w-[220px] drop-shadow-xl lg:max-w-[260px]"
         />
+        <div class="hexagon-cut" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -335,7 +337,7 @@ const socials = [
       </div>
       <div class="relative overflow-hidden">
         <img
-          src="public/images/shiroko-dance.gif"
+          src="images/shiroko-dance.gif"
           alt="Shiroko dancing"
           class="h-full w-full object-cover"
           loading="lazy"

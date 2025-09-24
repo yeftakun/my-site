@@ -13,6 +13,9 @@
   --primary-hover: #2049cc;
   --success: #1fa971;
   --danger: #d24545;
+    --hex-w: 420px;
+  --hex-h: 360px;
+  --hex-cut: 70%; /* coba 66–78% sampai pas */
 }
 
 .dark {
@@ -173,4 +176,45 @@ html {
 /* Target offset untuk section */
 section[id] {
   scroll-margin-top: 60px;
+}
+@media (max-width: 1024px) {
+  :root { --hex-w: 420px; --hex-h: 360px; --hex-cut: 72%; }
+}
+.hexagon-bg,
+.hexagon-cut {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--hex-w);
+  height: var(--hex-h);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  pointer-events: none;
+}
+
+/* Hexagon merah – sedikit turun agar kaki gambar berada di area bawahnya */
+.hexagon-bg {
+  top: 20%;
+  z-index: 0;
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+/* Hexagon pemotong – di atas gambar, tapi hanya BAGIAN BAWAH yang terlihat */
+.hexagon-cut {
+  top: 38%;
+  z-index: 20;                 /* > z-index gambar (z-10) */
+  background: var(--bg);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent var(--hex-cut),
+    black var(--hex-cut),
+    black 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent var(--hex-cut),
+    black var(--hex-cut),
+    black 100%
+  );
 }
