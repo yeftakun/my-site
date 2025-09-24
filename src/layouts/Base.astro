@@ -21,10 +21,10 @@ const navLinks = navSections.map((section) => ({
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{Astro.props.title ?? "Yefta Asyel | Personal Site"}</title>
-    <meta name="description" content={Astro.props.description ?? "Portofolio personal, catatan proyek, dan lap time Assetto Corsa."} />
+    <meta name="description" content={Astro.props.description ?? "Personal site saya"} />
     <meta property="og:title" content={Astro.props.title ?? "Yefta Asyel | Personal Site"} />
     <meta property="og:description" content={Astro.props.description ?? "Personal Site saya:D"} />
-    <meta property="og:image" content={Astro.props.image ?? withBase("public/images/shiroko.png")} />
+    <meta property="og:image" content={Astro.props.image ?? withBase("/images/shiroko.png")} />
     <meta name="theme-color" content="#2a5bff" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
     <script is:inline>
