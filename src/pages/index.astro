@@ -14,7 +14,7 @@ const hero = {
 const timeline = [
   {
     year: "2025",
-    title: "PT. PLN UID Suluttenggo Intern",
+    title: "Internship at PLN UID Suluttenggo",
     detail: "Magang di divisi STI",
   },
   {
@@ -66,7 +66,7 @@ const gameTagStyles = {
   sometimes: "bg-[#2A5BFF]/12 text-[#2A5BFF]",
   daily: "bg-[#1FA971]/15 text-[#1FA971]",
   chill: "bg-[#5A616B]/12 text-[#5A616B]",
-};
+} as const;
 
 const gamesList = [
   {
@@ -113,6 +113,39 @@ const gamesList = [
   }
 ];
 
+const connectLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/yeftakun",
+    icon: "bxl-facebook-circle",
+    badge: "border-[#1877F2]/30 bg-[#1877F2]/10 text-[#1877F2] hover:bg-[#1877F2]/15",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/yeftakun",
+    icon: "bxl-instagram",
+    badge: "border-[#DD2A7B]/30 bg-[#DD2A7B]/10 text-[#DD2A7B] hover:bg-[#DD2A7B]/15",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@yeftakun",
+    icon: "bxl-youtube",
+    badge: "border-[#FF0000]/30 bg-[#FF0000]/10 text-[#FF0000] hover:bg-[#FF0000]/15",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/yeftakun",
+    icon: "bxl-linkedin",
+    badge: "border-[#0A66C2]/30 bg-[#0A66C2]/10 text-[#0A66C2] hover:bg-[#0A66C2]/15",
+  },
+  {
+    label: "Steam",
+    href: "https://steamcommunity.com/id/yeftakun",
+    icon: "bxl-steam",
+    badge: "border-[#66C0F4]/30 bg-[#66C0F4]/10 text-[#66C0F4] hover:bg-[#66C0F4]/15",
+  },
+];
+
 const socials = [
   { label: "GitHub", href: "https://github.com/yeftakun" },
   { label: "LinkedIn", href: "https://www.linkedin.com" },
@@ -121,7 +154,7 @@ const socials = [
 ];
 ---
 <BaseLayout title="Yefta Kun | Personal Website" description="Portofolio minimalis, proyek, games, dan kontak dalam satu halaman." image={withBase("/social.png")}>
-  <section id="home" data-section class="section-panel space-y-12">
+  <section id="home" data-section class="section-panel space-y-16">
     <div class="flex flex-col items-center gap-10 text-center lg:flex-row lg:items-center lg:gap-12 lg:text-left">
       <div class="space-y-6 lg:flex-1">
         <span class="chip uppercase tracking-wider">Web dev / sim racing</span>
@@ -144,7 +177,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="about" data-section class="section-panel space-y-10">
+  <section id="about" data-section class="section-panel space-y-16">
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Tentang Saya</h2>
       <p class="max-w-3xl text-muted">
@@ -184,7 +217,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="projects" data-section class="section-panel space-y-8">
+  <section id="projects" data-section class="section-panel space-y-12">
     <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
       <div>
         <h2 class="text-3xl font-semibold">Projects</h2>
@@ -221,7 +254,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="games" data-section class="section-panel space-y-8">
+  <section id="games" data-section class="section-panel space-y-12">
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Games</h2>
       <p class="max-w-3xl text-muted">
@@ -232,13 +265,22 @@ const socials = [
       {gamesList.map((game) => (
         <article class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm shadow-black/5 transition hover:border-[var(--primary)]">
           <div class="flex items-center gap-4">
-            <div class="space-y-3">
-              <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[game.moodKey]}`}>
+            <div class="space-y-3 flex-1">
+              <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[game.moodKey as keyof typeof gameTagStyles]}`}>
                 {game.mood}
               </span>
               <div class="space-y-2">
                 <h3 class="text-lg font-semibold">{game.title}</h3>
                 <p class="text-sm text-muted">{game.highlight}</p>
+                {game.title === "Assetto Corsa" && (
+                  <a 
+                    href={withBase("/assetto-corsa")} 
+                    class="inline-flex items-center gap-2 text-xs text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium mt-2"
+                  >
+                    <i class="bx bx-racing text-sm" aria-hidden="true"></i>
+                    Lihat Lap Times →
+                  </a>
+                )}
               </div>
             </div>
             <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
@@ -250,15 +292,15 @@ const socials = [
     </div>
   </section>
 
-  <section id="contact" data-section class="section-panel space-y-8">
+  <section id="contact" data-section class="section-panel space-y-12">
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Contact</h2>
       <p class="max-w-2xl text-muted">
         Ceritakan projectmu atau kirimkan replay favoritmu. Saya akan membalas dalam 1-2 hari kerja.
       </p>
     </div>
-    <div class="grid gap-8 items-start lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
-      <form class="card space-y-5" method="post" action="https://formsubmit.co/placeholder@example.com">
+    <div class="w-full">
+      <form class="card space-y-5 w-full" method="post" action="https://formsubmit.co/placeholder@example.com">
         <div class="space-y-2">
           <label class="text-sm font-medium" for="name">Nama</label>
           <input id="name" name="name" type="text" required class="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text)] focus:border-[var(--primary)]" placeholder="Nama lengkap" />
@@ -274,24 +316,40 @@ const socials = [
         <button type="submit" class="btn btn-primary">Kirim pesan</button>
         <p class="text-xs text-muted">Form ini menggunakan FormSubmit (ganti endpoint sesuai provider yang Anda gunakan).</p>
       </form>
+    </div>
+  </section>
 
-      <aside class="card flex h-full flex-col justify-between gap-6">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold">Lebih cepat via</h3>
-          <ul class="space-y-3 text-sm text-muted">
-            {socials.map((item) => (
-              <li>
-                <a class="text-[var(--primary)] hover:text-[var(--primary-hover)]" href={item.href} target="_blank" rel="noopener noreferrer">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+  <section id="connect" data-section class="section-panel space-y-12">
+    <div class="grid gap-8 items-center lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)]">
+      <div class="space-y-6">
+        <div class="space-y-3">
+          <h2 class="text-3xl font-semibold">Connect with me</h2>
+          <p class="text-sm text-muted">Mau diskusi proyek, main bareng, atau sekadar say hi? Temukan saya di platform ini.</p>
         </div>
-        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 text-sm text-muted">
-          <p>Prefer diskusi cepat? Kirim DM di Discord: <strong>yefta#1997</strong>.</p>
+        <div class="flex flex-wrap gap-3">
+          {connectLinks.map((link) => (
+            <a
+              href={link.href}
+              class={`inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-medium shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg hover:border-current ${link.badge}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-current">
+                <i class={`bx ${link.icon} text-lg`} aria-hidden="true"></i>
+              </span>
+              {link.label}
+            </a>
+          ))}
         </div>
-      </aside>
+      </div>
+      <div class="relative overflow-hidden">
+        <img
+          src="public/images/shiroko-dance.gif"
+          alt="Shiroko dancing"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -20,12 +20,13 @@ const navLinks = navSections.map((section) => ({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{Astro.props.title ?? "Yefta Kun | Personal Site"}</title>
+    <title>{Astro.props.title ?? "Yefta Asyel | Personal Site"}</title>
     <meta name="description" content={Astro.props.description ?? "Portofolio personal, catatan proyek, dan lap time Assetto Corsa."} />
-    <meta property="og:title" content={Astro.props.title ?? "Yefta Kun | Personal Site"} />
-    <meta property="og:description" content={Astro.props.description ?? "Portofolio personal, catatan proyek, dan lap time Assetto Corsa."} />
-    <meta property="og:image" content={Astro.props.image ?? withBase("/social.png")} />
+    <meta property="og:title" content={Astro.props.title ?? "Yefta Asyel | Personal Site"} />
+    <meta property="og:description" content={Astro.props.description ?? "Personal Site saya:D"} />
+    <meta property="og:image" content={Astro.props.image ?? withBase("public/images/shiroko.png")} />
     <meta name="theme-color" content="#2a5bff" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
     <script is:inline>
       (() => {
         const root = document.documentElement;
@@ -44,9 +45,9 @@ const navLinks = navSections.map((section) => ({
       <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href={withBase("/")} class="flex items-center gap-3 font-semibold">
           <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary)] text-white">
-            YK
+            YA
           </span>
-          <span class="hidden text-sm text-muted sm:block">Yefta Kun</span>
+          <span class="hidden text-sm text-muted sm:block">Yefta Asyel</span>
         </a>
         <nav class="hidden items-center gap-6 text-sm md:flex">
           {navLinks.map((link, index) => (
@@ -64,18 +65,19 @@ const navLinks = navSections.map((section) => ({
             type="button"
             data-theme-toggle
             aria-label="Toggle theme"
-            class="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-xs transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
+            class="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] text-lg transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
           >
-            T
+            <i class="bx bx-sun dark:hidden" aria-hidden="true"></i>
+            <i class="bx bx-moon hidden dark:block" aria-hidden="true"></i>
           </button>
         </nav>
         <button
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] text-sm md:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] text-lg md:hidden transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
           data-menu-toggle
           aria-label="Toggle navigation"
         >
-          Menu
+          <i class="bx bx-menu" aria-hidden="true"></i>
         </button>
       </div>
       <div class="md:hidden" data-mobile-menu hidden>
@@ -96,13 +98,15 @@ const navLinks = navSections.map((section) => ({
             data-theme-toggle-mobile
             class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded border border-[var(--border)] px-3 py-2 text-sm transition hover:border-[var(--primary)] hover:text-[var(--primary)]"
           >
-            Toggle theme
+            <i class="bx bx-sun dark:hidden" aria-hidden="true"></i>
+            <i class="bx bx-moon hidden dark:block" aria-hidden="true"></i>
+            <span>Toggle theme</span>
           </button>
         </div>
       </div>
     </header>
 
-    <main class="mx-auto max-w-5xl px-6 py-16 space-y-24">
+    <main class="mx-auto max-w-5xl px-6 py-16 space-y-32">
       <slot />
     </main>
 
@@ -208,3 +212,4 @@ const navLinks = navSections.map((section) => ({
     </script>
   </body>
 </html>
+

@@ -159,3 +159,18 @@ textarea:focus-visible {
   filter: saturate(100%);
   transform: translateY(0);
 }
+
+/* Scroll padding untuk mengkompensasi sticky navbar */
+html {
+  scroll-padding-top: 60px;
+}
+
+/* Alternatif dengan scroll behavior smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Target offset untuk section */
+section[id] {
+  scroll-margin-top: 60px;
+}
