@@ -190,7 +190,10 @@ const navLinks = navSections.map((section) => ({
               setActiveSection(nextId);
             }
           },
-          { threshold: [0.3, 0.5, 0.7] }
+          { 
+            threshold: [0.1, 0.3, 0.5, 0.7],
+            rootMargin: '-80px 0px -20% 0px'
+          }
         );
 
         sectionNodes.forEach((section) => {
