@@ -14,7 +14,7 @@ const hero = {
 const timeline = [
   {
     year: "Now",
-    title: "Smt-1",
+    title: "Smt -1",
     detail: "Mikir judul skripsi, kegiatan KKN",
   },
   {
@@ -35,10 +35,10 @@ const timeline = [
 ];
 
 const interests = [
-  "Membangun workflow untuk mencatat lap time",
-  "Interaksi micro (hover, focus, motion) yang tidak berlebihan",
-  "Menerjemahkan data mentah ke visualisasi yang mudah dipahami",
-  "Eksperimen tema terang/gelap dengan CSS variable",
+  "Eksperimen proyek baru dengan AI",
+  "Eksperimen track, mobil dan setup sim racing baru",
+  "Merapikan project lama biar gampang di-maintain lagi",
+  "Merapikan dan membersihkan workspace laptop saya",
 ];
 
 const projects = [
@@ -132,6 +132,56 @@ const gamesList = [
   },
 ];
 
+const sportsList = [
+  {
+    title: "Badminton",
+    mood: "Active",
+    moodKey: "daily",
+    highlight: "Main bareng temen kampus, lumayan buat olahraga ringan.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw8KVF9Xw6D4ZqCQJ5x1Y2Y1ZUWvYYl3ZZ8Q&s",
+  },
+  {
+    title: "Sepak Bola",
+    mood: "Sometimes",
+    moodKey: "sometimes",
+    highlight: "Nonton pertandingan lebih seru daripada main langsung.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4xZQzKFZqYQxGXmL3HqKjF5Y8P0jK9ZzQnQ&s",
+  },
+];
+
+const musicList = [
+  {
+    genre: "Pop Indonesia",
+    icon: "bx-heart",
+    artists: ["Tulus", "Raisa", "Isyana Sarasvati", "Pamungkas"]
+  },
+  {
+    genre: "J-Pop/Anime",
+    icon: "bx-star",
+    artists: ["LiSA", "Yoasobi", "Official HIGE DANdism", "ONE OK ROCK"]
+  },
+  {
+    genre: "Lo-Fi Hip Hop",
+    icon: "bx-headphone",
+    artists: ["ChilledCow", "Jinsang", "Nujabes", "j^p^n"]
+  },
+  {
+    genre: "EDM/Electronic",
+    icon: "bx-radio",
+    artists: ["Alan Walker", "Marshmello", "Martin Garrix", "Skrillex"]
+  },
+  {
+    genre: "Alternative Rock",
+    icon: "bx-music",
+    artists: ["Imagine Dragons", "OneRepublic", "Coldplay", "Maroon 5"]
+  },
+  {
+    genre: "Gaming OST",
+    icon: "bx-game",
+    artists: ["Minecraft Soundtrack", "Genshin Impact OST", "Undertale OST", "NieR OST"]
+  },
+];
+
 const connectLinks = [
   {
     label: "Facebook",
@@ -205,31 +255,34 @@ const socials = [
         Saya suka merancang antarmuka bersih yang tidak mengganggu konten. Ketika tidak menulis kode, saya bereksperimen dengan setup mobil dan berburu personal best di berbagai track Assetto Corsa.
       </p>
     </div>
-    <div class="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
-      <div class="card space-y-4">
-        <h3 class="text-xl font-semibold">Nilai kerja</h3>
-        <ul class="space-y-3 text-sm text-muted">
-          <li>Ship cepat, iterasi sering, ukur hasil.</li>
-          <li>Komunikasi jelas dengan dokumentasi singkat.</li>
-          <li>Perhatikan aksesibilitas sejak awal, bukan add-on.</li>
-        </ul>
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center ">
+      <div class="flex items-center justify-center">
+      <img
+        src={withBase("/images/timeline.png")}
+        alt="Timeline perjalanan karir"
+        loading="lazy"
+        class="w-full h-auto"
+        style="width: calc(100% - 80px);"
+      />
       </div>
       <div class="space-y-8">
-        <h3 class="text-xl font-semibold">Perjalanan singkat</h3>
-        <ul class="relative space-y-6 border-l border-[var(--border)] pl-6">
-          {timeline.map((item) => (
-            <li class="relative">
-              <div class="absolute -left-2 mt-1 h-3 w-3 rounded-full bg-[var(--primary)]"></div>
-              <span class="text-xs uppercase tracking-wide text-muted">{item.year}</span>
-              <h4 class="text-lg font-semibold">{item.title}</h4>
-              <p class="text-sm text-muted">{item.detail}</p>
-            </li>
-          ))}
-        </ul>
+      <h3 class="text-xl font-semibold">Journey</h3>
+      <ul class="relative space-y-6 border-l border-[var(--border)] pl-6">
+        {timeline.map((item) => (
+          <li class="relative">
+            <!-- dot -->
+            <div class="absolute -left-2 top-[0.6em] h-3 w-3 rounded-full bg-[var(--primary)]"></div>
+
+            <span class="text-xs uppercase tracking-wide text-muted ml-2">{item.year}</span>  
+            <h4 class="text-lg font-semibold">{item.title}</h4>
+            <p class="text-sm text-muted">{item.detail}</p>
+          </li>
+        ))}
+      </ul>
       </div>
     </div>
     <div class="card space-y-5">
-      <h3 class="text-xl font-semibold">Hal yang saya nikmati</h3>
+      <h3 class="text-xl font-semibold">Saya suka...</h3>
       <ul class="grid gap-3 md:grid-cols-2">
         {interests.map((item) => (
           <li class="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-4 text-sm text-muted">{item}</li>
@@ -275,41 +328,103 @@ const socials = [
     </div>
   </section>
 
-  <section id="games" data-section class="section-panel space-y-8">
+  <section id="hobbies" data-section class="section-panel space-y-12">
     <div class="space-y-3">
-      <h2 class="text-3xl font-semibold">Games</h2>
+      <h2 class="text-3xl font-semibold">Hobbies</h2>
       <p class="max-w-3xl text-muted">
-        Catatan singkat jam main membantu saya memahami pola latihan dan kapan harus rehat. Saat ini fokus ke empat game ini.
+        Hal-hal yang saya lakukan di waktu luang untuk refreshing dan mengembangkan diri.
       </p>
     </div>
-    <div class="grid gap-6 md:grid-cols-2">
-      {gamesList.map((game) => (
-        <article class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm shadow-black/5 transition hover:border-[var(--primary)]">
-          <div class="flex items-center gap-4">
-            <div class="space-y-3 flex-1">
-              <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[game.moodKey as keyof typeof gameTagStyles]}`}>
-                {game.mood}
-              </span>
-              <div class="space-y-2">
-                <h3 class="text-lg font-semibold">{game.title}</h3>
-                <p class="text-sm text-muted">{game.highlight}</p>
-                {game.title === "Assetto Corsa" && (
-                  <a 
-                    href={withBase("/assetto-corsa")} 
-                    class="inline-flex items-center gap-2 text-xs text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium mt-2 transition-colors"
-                  >
-                    <i class="bx bx-racing text-sm" aria-hidden="true"></i>
-                    Lihat Lap Times →
-                  </a>
-                )}
+    
+    <!-- Games Section -->
+    <div class="space-y-6">
+      <h3 class="text-2xl font-semibold flex items-center gap-3">
+        <i class="bx bx-game text-[var(--primary)]"></i>
+        Games
+      </h3>
+      <div class="grid gap-6 md:grid-cols-2">
+        {gamesList.map((game) => (
+          <article class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm shadow-black/5 transition hover:border-[var(--primary)]">
+            <div class="flex items-center gap-4">
+              <div class="space-y-3 flex-1">
+                <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[game.moodKey as keyof typeof gameTagStyles]}`}>
+                  {game.mood}
+                </span>
+                <div class="space-y-2">
+                  <h4 class="text-lg font-semibold">{game.title}</h4>
+                  <p class="text-sm text-muted">{game.highlight}</p>
+                  {game.title === "Assetto Corsa" && (
+                    <a 
+                      href={withBase("/assetto-corsa")} 
+                      class="inline-flex items-center gap-2 text-xs text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium mt-2 transition-colors"
+                    >
+                      <i class="bx bx-racing text-sm" aria-hidden="true"></i>
+                      Lihat Lap Times →
+                    </a>
+                  )}
+                </div>
+              </div>
+              <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
+                <img src={game.image} alt={`Cover ${game.title}`} loading="lazy" class="h-full w-full object-cover" />
               </div>
             </div>
-            <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
-              <img src={game.image} alt={`Cover ${game.title}`} loading="lazy" class="h-full w-full object-cover" />
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Sports Section -->
+    <div class="space-y-6">
+      <h3 class="text-2xl font-semibold flex items-center gap-3">
+        <i class="bx bx-football text-[var(--primary)]"></i>
+        Sport
+      </h3>
+      <div class="grid gap-6 md:grid-cols-2">
+        {sportsList.map((sport) => (
+          <article class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm shadow-black/5 transition hover:border-[var(--primary)]">
+            <div class="flex items-center gap-4">
+              <div class="space-y-3 flex-1">
+                <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[sport.moodKey as keyof typeof gameTagStyles]}`}>
+                  {sport.mood}
+                </span>
+                <div class="space-y-2">
+                  <h4 class="text-lg font-semibold">{sport.title}</h4>
+                  <p class="text-sm text-muted">{sport.highlight}</p>
+                </div>
+              </div>
+              <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
+                <img src={sport.image} alt={`${sport.title} sport`} loading="lazy" class="h-full w-full object-cover" />
+              </div>
             </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Music Section -->
+    <div class="space-y-6">
+      <h3 class="text-2xl font-semibold flex items-center gap-3">
+        <i class="bx bx-music text-[var(--primary)]"></i>
+        Musik
+      </h3>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {musicList.map((music) => (
+          <div class="card space-y-3">
+            <div class="flex items-center gap-3">
+              <i class={`bx ${music.icon} text-lg text-[var(--primary)]`}></i>
+              <h4 class="text-lg font-semibold">{music.genre}</h4>
+            </div>
+            <ul class="space-y-2 text-sm text-muted">
+              {music.artists.map((artist) => (
+                <li class="flex items-center gap-2">
+                  <span class="w-1 h-1 bg-[var(--muted)] rounded-full"></span>
+                  {artist}
+                </li>
+              ))}
+            </ul>
           </div>
-        </article>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 
@@ -345,7 +460,7 @@ const socials = [
       <div class="space-y-6">
         <div class="space-y-3">
           <h2 class="text-3xl font-semibold">Connect with me</h2>
-          <p class="text-sm text-muted">Mau diskusi proyek, main bareng, atau sekadar say hi? Temukan saya di platform ini.</p>
+          <p class="text-sm text-muted">Add banh</p>
         </div>
         <div class="flex flex-wrap gap-3">
           {connectLinks.map((link) => (
