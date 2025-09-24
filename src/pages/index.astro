@@ -14,18 +14,18 @@ const hero = {
 const timeline = [
   {
     year: "2025",
-    title: "Mahasiswa Informatika",
-    detail: "Sedang fokus pada pengembangan web modern, UI design system, dan prototyping data untuk sim racing.",
+    title: "PT. PLN UID Suluttenggo Intern",
+    detail: "Magang di divisi STI",
   },
   {
     year: "2024",
-    title: "Freelance Frontend",
-    detail: "Mengerjakan landing page ringan untuk komunitas lokal, memanfaatkan Astro dan Tailwind.",
+    title: "Belajar Web Dev",
+    detail: "PHP Mysql, Lanjut ke Node.js",
   },
   {
     year: "2022",
-    title: "Game & Tech Communities",
-    detail: "Aktif di komunitas sim racing, berbagi setup dan analisis telemetri dasar.",
+    title: "Mahasiswa Informatika",
+    detail: "Lagi mikir judul skripsi",
   },
 ];
 
@@ -38,11 +38,12 @@ const interests = [
 
 const projects = [
   {
-    name: "Assetto Corsa Lap Board",
-    description: "Konversi personalbest.ini menjadi JSON lalu disajikan dalam tabel interaktif dengan filter track dan mobil.",
-    stack: ["Astro", "React", "TailwindCSS"],
+    name: "Hiki Adventure",
+    badge: "Tugas Kuliah",
+    description: "Tugas akhir proyek Mata Kuliah Pengembangan Game 2023",
+    stack: ["Game", "2D", "Unity"],
     links: [
-      { label: "Demo", href: withBase("/assetto-corsa") },
+      { label: "Demo", href: "https://youtu.be/XkVjXmlQ2QE?si=Nk1JKIZE-ujc9J1d" },
       { label: "Repo", href: "https://github.com/yeftakun/my-site" },
     ],
   },
@@ -190,14 +191,19 @@ const socials = [
         <p class="text-sm text-muted">Pilihan pekerjaan dan eksperimen yang sedang aktif.</p>
       </div>
       <a href={withBase("/assetto-corsa")} class="text-sm text-[var(--primary)] hover:text-[var(--primary-hover)]">
-        Lihat Lap Time Board â†’
+        Lihat Lap Time Board →
       </a>
     </div>
     <div class="grid gap-6 md:grid-cols-2">
       {projects.map((project) => (
-        <article class="card space-y-4">
+        <article class="card flex h-full flex-col space-y-4">
           <header class="space-y-2">
-            <h3 class="text-xl font-semibold">{project.name}</h3>
+            <div class="flex items-center gap-3">
+              <h3 class="text-xl font-semibold">{project.name}</h3>
+              {project.badge && (
+                <span class="chip bg-[var(--primary)]/12 text-[var(--primary)] text-xs font-medium uppercase tracking-wide">{project.badge}</span>
+              )}
+            </div>
             <p class="text-sm text-muted">{project.description}</p>
           </header>
           <div class="flex flex-wrap gap-2 text-xs">
@@ -205,7 +211,7 @@ const socials = [
               <span class="chip">{tech}</span>
             ))}
           </div>
-          <div class="flex flex-wrap gap-3">
+          <div class="mt-auto flex flex-wrap gap-3">
             {project.links.map((link) => (
               <a href={link.href} class="btn btn-ghost text-sm">{link.label}</a>
             ))}
@@ -235,7 +241,7 @@ const socials = [
                 <p class="text-sm text-muted">{game.highlight}</p>
               </div>
             </div>
-            <div class="relative h-24 w-24 shrink-0 self-center overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
+            <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
               <img src={game.image} alt={`Cover ${game.title}`} loading="lazy" class="h-full w-full object-cover" />
             </div>
           </div>
@@ -289,3 +295,4 @@ const socials = [
     </div>
   </section>
 </BaseLayout>
+
