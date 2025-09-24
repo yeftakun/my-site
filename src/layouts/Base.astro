@@ -112,11 +112,12 @@ const navLinks = navSections.map((section) => ({
 
     <footer class="border-t border-[var(--border)] bg-[color-mix(in srgb,var(--bg) 88%,transparent)]">
       <div class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 text-sm text-muted md:flex-row md:items-center md:justify-between">
-        <span>2025 Yefta Asyel. GPT-5 dengan Astro </span>
+        <span>© 2025 Yefta Asyel. Built with Astro ⚡</span>
         <div class="flex gap-4">
-          <a href="https://github.com/yeftakun" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://steamcommunity.com" target="_blank" rel="noopener noreferrer">Steam</a>
+          <a href={withBase("/#about")} class="hover:text-[var(--primary)] transition-colors">About</a>
+          <a href={withBase("/#projects")} class="hover:text-[var(--primary)] transition-colors">Projects</a>
+          <a href={withBase("/#hobbies")} class="hover:text-[var(--primary)] transition-colors">Hobbies</a>
+          <a href={withBase("/#contact")} class="hover:text-[var(--primary)] transition-colors">Contact</a>
         </div>
       </div>
     </footer>
