@@ -2,7 +2,7 @@ name: Deploy Astro to GitHub Pages
 
 on:
   push:
-    branches: [main]   # ganti jika branch default-mu bukan main
+    branches: [master]   # ganti jika branch default-mu bukan main
   workflow_dispatch:
 
 permissions:
