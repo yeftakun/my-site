@@ -14,7 +14,7 @@ const hero = {
 const timeline = [
   {
     year: "2025",
-    title: "Internship at PLN UID Suluttenggo",
+    title: "PT. PLN UID Suluttenggo Intern",
     detail: "Magang di divisi STI",
   },
   {
@@ -154,7 +154,7 @@ const socials = [
 ];
 ---
 <BaseLayout title="Yefta Kun | Personal Website" description="Portofolio minimalis, proyek, games, dan kontak dalam satu halaman." image={withBase("/social.png")}>
-  <section id="home" data-section class="section-panel space-y-16">
+  <section id="home" data-section class="section-panel space-y-12">
     <div class="flex flex-col items-center gap-10 text-center lg:flex-row lg:items-center lg:gap-12 lg:text-left">
       <div class="space-y-6 lg:flex-1">
         <span class="chip uppercase tracking-wider">Web dev / sim racing</span>
@@ -177,7 +177,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="about" data-section class="section-panel space-y-16">
+  <section id="about" data-section class="section-panel space-y-10">
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Tentang Saya</h2>
       <p class="max-w-3xl text-muted">
@@ -217,7 +217,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="projects" data-section class="section-panel space-y-12">
+  <section id="projects" data-section class="section-panel space-y-8">
     <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
       <div>
         <h2 class="text-3xl font-semibold">Projects</h2>
@@ -254,7 +254,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="games" data-section class="section-panel space-y-12">
+  <section id="games" data-section class="section-panel space-y-8">
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Games</h2>
       <p class="max-w-3xl text-muted">
@@ -265,22 +265,13 @@ const socials = [
       {gamesList.map((game) => (
         <article class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm shadow-black/5 transition hover:border-[var(--primary)]">
           <div class="flex items-center gap-4">
-            <div class="space-y-3 flex-1">
+            <div class="space-y-3">
               <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[game.moodKey as keyof typeof gameTagStyles]}`}>
                 {game.mood}
               </span>
               <div class="space-y-2">
                 <h3 class="text-lg font-semibold">{game.title}</h3>
                 <p class="text-sm text-muted">{game.highlight}</p>
-                {game.title === "Assetto Corsa" && (
-                  <a 
-                    href={withBase("/assetto-corsa")} 
-                    class="inline-flex items-center gap-2 text-xs text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium mt-2"
-                  >
-                    <i class="bx bx-racing text-sm" aria-hidden="true"></i>
-                    Lihat Lap Times →
-                  </a>
-                )}
               </div>
             </div>
             <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
@@ -292,7 +283,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="contact" data-section class="section-panel space-y-12">
+  <section id="contact" data-section class="section-panel space-y-8">
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Contact</h2>
       <p class="max-w-2xl text-muted">
@@ -319,7 +310,7 @@ const socials = [
     </div>
   </section>
 
-  <section id="connect" data-section class="section-panel space-y-12">
+  <section id="connect" data-section class="section-panel space-y-8">
     <div class="grid gap-8 items-center lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)]">
       <div class="space-y-6">
         <div class="space-y-3">
