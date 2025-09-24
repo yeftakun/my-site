@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/Base.astro";
+import LapTable from "../components/LapTable.jsx";
+
+const pageMeta = {
+  title: "Assetto Corsa | Lap Time Board",
+  description: "Filter dan telusuri catatan lap pribadi langsung dari personalbest.ini yang dikonversi.",
+};
+---
+<BaseLayout {...pageMeta}>
+  <section class="space-y-4">
+    <h1 class="text-3xl font-semibold">Lap Time Board</h1>
+    <p class="text-sm text-muted">
+      Data berasal dari <code>personalbest.ini</code> dan diproses dengan skrip <code>npm run laps:build</code>.
+    </p>
+  </section>
+  <section class="space-y-6">
+    <LapTable client:load />
+  </section>
+</BaseLayout>
