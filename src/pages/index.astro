@@ -4,28 +4,33 @@ import { withBase } from "../utils/url.js";
 
 const hero = {
   title: "Halo, saya Yefta",
-  subtitle: "Mahasiswa Informatika, web developer, dan sim racing enthusiast.",
+  subtitle: "Mahasiswa Informatika, Tech Enthusiast",
   description:
-    "Saya membangun pengalaman digital yang cepat dan simpel, sambil menghabiskan malam untuk mengejar personal best di Assetto Corsa.",
-  ctaPrimary: { label: "Lihat Portofolio", href: withBase("/#projects") },
-  ctaSecondary: { label: "Lap Time Board", href: withBase("/assetto-corsa") },
+    "Halo gaes, saya Yefta mahasiswa informatika yang suka ngoding (pake AI) dan main game. Saya suka bereksperimen dengan teknologi baru dan membangun proyek yang menarik. Well itu aja sih.",
+  ctaPrimary: { label: "Proyek Saya", href: withBase("/#projects") },
+  // ctaSecondary: { label: "Lap Time Board", href: withBase("/assetto-corsa") },
 };
 
 const timeline = [
   {
+    year: "Now",
+    title: "Smt-1",
+    detail: "Mikir judul skripsi, kegiatan KKN",
+  },
+  {
     year: "2025",
-    title: "PT. PLN UID Suluttenggo Intern",
-    detail: "Magang di divisi STI",
+    title: "Aku Magang",
+    detail: "Magang di PT. PLN UID Suluttenggo di divisi STI",
   },
   {
     year: "2024",
-    title: "Belajar Web Dev",
-    detail: "PHP Mysql, Lanjut ke Node.js",
+    title: "Web is Fun!",
+    detail: "Mulai belajar PHP Mysql, sejauh ini saya sudah menemukan bidang IT yang akan saya tekuni (bidang lain butuh spek laptop tinggi😭)",
   },
   {
     year: "2022",
-    title: "Mahasiswa Informatika",
-    detail: "Lagi mikir judul skripsi",
+    title: "Join to IT",
+    detail: "Terjun ke bidang IT, C++ is my first language",
   },
 ];
 
@@ -63,9 +68,9 @@ const projects = [
 
 const gameTagStyles = {
   fav: "bg-[#E10600]/15 text-[#E10600]",
-  sometimes: "bg-[#2A5BFF]/12 text-[#2A5BFF]",
+  sometimes: "bg-[#2A5BFF]/15 text-[#2A5BFF]",
   daily: "bg-[#1FA971]/15 text-[#1FA971]",
-  chill: "bg-[#5A616B]/12 text-[#5A616B]",
+  chill: "bg-[#5A616B]/15 text-[#5A616B]",
 } as const;
 
 const gamesList = [
@@ -110,7 +115,21 @@ const gamesList = [
     moodKey: "sometimes",
     highlight: "Cuma buat iseng aja, ga serius ngejar rank.",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4_AwDqX2C1Yez1ZI-lK9N4hyvYyMJmSaiAA&s",
-  }
+  },
+  {
+    title: "Free Fire",
+    mood: "Pensi",
+    moodKey: "chill",
+    highlight: "Game compe pertama, sudah ga dimainin.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMiXtQlzQqp7HUDqcEzNwvz_gvzdh_EjM_eA&s",
+  },
+  {
+    title: "Apex Legends Mobile",
+    mood: "Gamenya tutup",
+    moodKey: "chill",
+    highlight: "Niat mau diseriusin tapi gamenya tutup awokaokwok",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGMMNC15Bk-e2btuYx0IkIsAjc6LlYYcBWHA&s",
+  },
 ];
 
 const connectLinks = [
@@ -157,13 +176,13 @@ const socials = [
   <section id="home" data-section class="section-panel space-y-12">
     <div class="flex flex-col items-center gap-10 text-center lg:flex-row lg:items-center lg:gap-12 lg:text-left">
       <div class="space-y-6 lg:flex-1">
-        <span class="chip uppercase tracking-wider">Web dev / sim racing</span>
+        <span class="chip uppercase tracking-wider">IT Student</span>
         <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">{hero.title}</h1>
         <p class="text-lg text-muted">{hero.subtitle}</p>
         <p class="max-w-2xl text-base text-muted">{hero.description}</p>
         <div class="flex flex-wrap justify-center gap-3 lg:justify-start">
           <a class="btn btn-primary" href={hero.ctaPrimary.href}>{hero.ctaPrimary.label}</a>
-          <a class="btn btn-ghost" href={hero.ctaSecondary.href}>{hero.ctaSecondary.label}</a>
+          <!-- <a class="btn btn-ghost" href={hero.ctaSecondary.href}>{hero.ctaSecondary.label}</a> -->
         </div>
       </div>
       <div class="relative lg:flex-1">
@@ -267,13 +286,22 @@ const socials = [
       {gamesList.map((game) => (
         <article class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-sm shadow-black/5 transition hover:border-[var(--primary)]">
           <div class="flex items-center gap-4">
-            <div class="space-y-3">
+            <div class="space-y-3 flex-1">
               <span class={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${gameTagStyles[game.moodKey as keyof typeof gameTagStyles]}`}>
                 {game.mood}
               </span>
               <div class="space-y-2">
                 <h3 class="text-lg font-semibold">{game.title}</h3>
                 <p class="text-sm text-muted">{game.highlight}</p>
+                {game.title === "Assetto Corsa" && (
+                  <a 
+                    href={withBase("/assetto-corsa")} 
+                    class="inline-flex items-center gap-2 text-xs text-[var(--primary)] hover:text-[var(--primary-hover)] font-medium mt-2 transition-colors"
+                  >
+                    <i class="bx bx-racing text-sm" aria-hidden="true"></i>
+                    Lihat Lap Times →
+                  </a>
+                )}
               </div>
             </div>
             <div class="relative h-24 w-24 shrink-0 self-center ml-auto overflow-hidden rounded-xl border border-[var(--border)] bg-black/5">
