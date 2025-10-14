@@ -36,9 +36,8 @@ const timeline = [
 
 const interests = [
   "Eksperimen proyek baru dengan AI",
-  "Eksperimen track, mobil dan setup sim racing baru",
   "Merapikan project lama biar gampang di-maintain lagi",
-  "Merapikan dan membersihkan workspace laptop saya",
+  "Merapikan dan membersihkan workspace",
 ];
 
 const projects = [
@@ -87,7 +86,7 @@ const projects = [
     badge: "Tugas Kuliah",
     description: "Aplikasi absensi siswa yang terintegrasi dengan perangkat RFID berbasis Arduino dan notifikasi otomatis melalui WhatsApp bot",
     stack: ["Nodejs", "Arduino", "WhatsApp Bot"],
-    links: [{ label: "Demo", href: "#" }],
+    links: [{ label: "Demo", href: "https://youtu.be/3jZ1fYYiFYw?si=BGN6tFn7PoI-nJbr" }],
   },
   {
     name: "Scraping Pengumuman Kuliah",
@@ -321,7 +320,7 @@ const connectLinks = [
     <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
       <div>
         <h2 class="text-3xl font-semibold">Projects</h2>
-        <p class="text-sm text-muted">Maap kebanyakan masih pakai AI:v</p>
+        <p class="text-sm text-muted">Beberapa proyek saya...</p>
       </div>
     </div>
     <div class="grid gap-6 md:grid-cols-2">
@@ -355,7 +354,7 @@ const connectLinks = [
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Hobbies</h2>
       <p class="max-w-3xl text-muted">
-        Hal-hal yang saya lakukan di waktu luang untuk refreshing dan mengembangkan diri.
+        Hal-hal yang saya lakukan untuk refreshing dan mengembangkan diri.
       </p>
     </div>
     
@@ -455,7 +454,7 @@ const connectLinks = [
     <div class="space-y-3">
       <h2 class="text-3xl font-semibold">Contact</h2>
       <p class="max-w-2xl text-muted">
-        Teman-teman ingin memberikan saran/masukan, silahkan isi form ini! (Langsung DM IG aja wkwk)
+        Ada saran? (Langsung DM IG aja wkwk)
       </p>
     </div>
     <div class="w-full">
@@ -470,10 +469,10 @@ const connectLinks = [
         </div>
         <div class="space-y-2">
           <label class="text-sm font-medium" for="message">Pesan</label>
-          <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text)] focus:border-[var(--primary)]" placeholder="Tulis detail project, jadwal, atau topik yang ingin dibahas"></textarea>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text)] focus:border-[var(--primary)]" placeholder="Tulis topik yang ingin dibahas"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Kirim pesan</button>
-        <p class="text-xs text-muted">Form ini menggunakan FormSubmit (ganti endpoint sesuai provider yang Anda gunakan).</p>
+        <!-- <p class="text-xs text-muted">Form ini menggunakan FormSubmit (ganti endpoint sesuai provider yang Anda gunakan).</p> -->
       </form>
     </div>
   </section>
