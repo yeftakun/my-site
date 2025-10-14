@@ -3,6 +3,8 @@
     "type": "module",
     "version": "0.0.1",
     "scripts": {
+        "predev": "npm run laps:build",
+        "prebuild": "npm run laps:build",
         "dev": "astro dev",
         "build": "astro build",
         "preview": "astro preview",

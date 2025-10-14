@@ -17,7 +17,10 @@ function toLocalDateYYYYMMDD(ms, offsetHours = 8) {
 }
 
 const iniPath = path.resolve("data/assetto/personalbest.ini");
-const outPath = path.resolve("data/assetto/laps.json");
+const outDir = path.resolve("public/data/assetto");
+const outPath = path.join(outDir, "laps.json");
+
+fs.mkdirSync(outDir, { recursive: true });
 
 const text = fs.readFileSync(iniPath, "utf-8");
 const lines = text.split(/\r?\n/);
