@@ -458,13 +458,49 @@
   {
     "car": "PORSCHE_911_RSR_2017",
     "track": "IMOLA",
-    "date": "2025-09-21",
-    "laptime_ms": 105348
+    "date": "2025-10-07",
+    "laptime_ms": 105260
   },
   {
     "car": "MAZDA_787B",
     "track": "SPA",
     "date": "2025-09-19",
     "laptime_ms": 141548
+  },
+  {
+    "car": "PORSCHE_911_RSR_2017",
+    "track": "NORDSCHLEIFE-ENDURANCE_CUP",
+    "date": "2025-09-29",
+    "laptime_ms": 506401
+  },
+  {
+    "car": "MERCEDES_AMG_GT3",
+    "track": "SPA",
+    "date": "2025-10-02",
+    "laptime_ms": 143646
+  },
+  {
+    "car": "MERCEDES_AMG_GT3",
+    "track": "NORDSCHLEIFE-ENDURANCE_CUP",
+    "date": "2025-10-02",
+    "laptime_ms": 536537
+  },
+  {
+    "car": "AC_FRIENDS_FERRARI_499P_LMH",
+    "track": "FUJI_SPEEDWAY_MTS-GP_2017",
+    "date": "2025-10-06",
+    "laptime_ms": 91593
+  },
+  {
+    "car": "TOYOTA_GR010_HYBRID",
+    "track": "IMOLA",
+    "date": "2025-10-09",
+    "laptime_ms": 93618
+  },
+  {
+    "car": "BMW_M_V8_HYBRIDE",
+    "track": "IMOLA",
+    "date": "2025-10-13",
+    "laptime_ms": 90064
   }
 ]
