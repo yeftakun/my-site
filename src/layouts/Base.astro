@@ -17,7 +17,7 @@ const navLinks = navSections.map((section) => ({
 
 const defaultTitle = "Yefta Asyel | Personal Site";
 const defaultDescription = "Personal site saya";
-const defaultImage = "/images/shiroko.png";
+const defaultImage = new URL("/images/shiroko.png", "https://yeftaasyel.my.id").href;
 const siteUrl = Astro.site?.href ?? "https://yeftaasyel.my.id";
 const urlPath = Astro.url?.pathname ?? "/";
 const title = Astro.props.title ?? defaultTitle;
