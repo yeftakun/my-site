@@ -14,17 +14,40 @@ const navLinks = navSections.map((section) => ({
   ...section,
   href: withBase(`/#${section.id}`),
 }));
+
+const defaultTitle = "Yefta Asyel | Personal Site";
+const defaultDescription = "Personal site saya";
+const defaultImage = "/images/shiroko.png";
+const siteUrl = Astro.site?.href ?? "https://yeftaasyel.my.id";
+const urlPath = Astro.url?.pathname ?? "/";
+const title = Astro.props.title ?? defaultTitle;
+const description = Astro.props.description ?? defaultDescription;
+const imageInput = Astro.props.image ?? defaultImage;
+const ogImage = imageInput.startsWith("http") ? imageInput : new URL(imageInput, siteUrl).href;
+const canonicalUrl = new URL(urlPath, siteUrl).href;
+const imageAlt = Astro.props.imageAlt ?? "Yefta Asyel personal site preview";
+const ogType = Astro.props.ogType ?? "website";
 ---
 <!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{Astro.props.title ?? "Yefta Asyel | Personal Site"}</title>
-    <meta name="description" content={Astro.props.description ?? "Personal site saya"} />
-    <meta property="og:title" content={Astro.props.title ?? "Yefta Asyel | Personal Site"} />
-    <meta property="og:description" content={Astro.props.description ?? "Personal Site saya:D"} />
-    <meta property="og:image" content={Astro.props.image ?? withBase("/images/shiroko.png")} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:site_name" content="Yefta Asyel" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <meta name="theme-color" content="#2a5bff" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
     <script is:inline>
