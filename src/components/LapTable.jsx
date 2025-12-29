@@ -28,9 +28,11 @@ export default function LapTable() {
   }, [rows, q]);
 
   const sorted = useMemo(() => {
+    const compareValue = (row, key) => (key === "date" ? new Date(row.date).getTime() : row[key]);
     const v = [...filtered];
     v.sort((a, b) => {
-      const A = a[sortKey], B = b[sortKey];
+      const A = compareValue(a, sortKey);
+      const B = compareValue(b, sortKey);
       if (A === B) return 0;
       return sortDir === "asc" ? (A > B ? 1 : -1) : (A < B ? 1 : -1);
     });
