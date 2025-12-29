@@ -254,8 +254,8 @@
   {
     "car": "PORSCHE_911_GT3_R_2016",
     "track": "IMOLA",
-    "date": "2025-05-14",
-    "laptime_ms": 109913
+    "date": "2025-10-25",
+    "laptime_ms": 105814
   },
   {
     "car": "BMW_M3_GT2",
@@ -296,8 +296,8 @@
   {
     "car": "AUDI_R8_LMS",
     "track": "IMOLA",
-    "date": "2025-06-27",
-    "laptime_ms": 110542
+    "date": "2025-11-29",
+    "laptime_ms": 107088
   },
   {
     "car": "BMW_M4_AKRAPOVIC",
@@ -464,8 +464,8 @@
   {
     "car": "MAZDA_787B",
     "track": "SPA",
-    "date": "2025-09-19",
-    "laptime_ms": 141548
+    "date": "2025-12-18",
+    "laptime_ms": 139423
   },
   {
     "car": "PORSCHE_911_RSR_2017",
@@ -502,5 +502,191 @@
     "track": "IMOLA",
     "date": "2025-10-13",
     "laptime_ms": 90064
+  },
+  {
+    "car": "MERCEDES_AMG_GT3",
+    "track": "NORDSCHLEIFE-NORDSCHLEIFE",
+    "date": "2025-10-17",
+    "laptime_ms": 417715
+  },
+  {
+    "car": "FERRARI_488_GT3",
+    "track": "HIGHLANDS-LAYOUT_INT",
+    "date": "2025-10-20",
+    "laptime_ms": 142354
+  },
+  {
+    "car": "PORSCHE_911_GT3_R_2016",
+    "track": "NORDSCHLEIFE-NORDSCHLEIFE",
+    "date": "2025-10-21",
+    "laptime_ms": 412167
+  },
+  {
+    "car": "URD_DARCHE_992_23",
+    "track": "IMOLA",
+    "date": "2025-10-27",
+    "laptime_ms": 104936
+  },
+  {
+    "car": "URD_DARCHE_992_23",
+    "track": "NORDSCHLEIFE-NORDSCHLEIFE",
+    "date": "2025-10-29",
+    "laptime_ms": 406854
+  },
+  {
+    "car": "FERRARI_488_GT3",
+    "track": "FUJI_SPEEDWAY_MTS-GP_2017",
+    "date": "2025-11-01",
+    "laptime_ms": 102880
+  },
+  {
+    "car": "PORSCHE_911_RSR_2017",
+    "track": "ACF_SENTUL_CIRCUIT",
+    "date": "2025-11-09",
+    "laptime_ms": 84820
+  },
+  {
+    "car": "TRR_FERRARI_296_GT3",
+    "track": "IMOLA",
+    "date": "2025-11-12",
+    "laptime_ms": 107798
+  },
+  {
+    "car": "TRR_FERRARI_296_GT3",
+    "track": "NORDSCHLEIFE-NORDSCHLEIFE",
+    "date": "2025-11-13",
+    "laptime_ms": 424899
+  },
+  {
+    "car": "MERCEDES_AMG_GT3",
+    "track": "RT_MACAU",
+    "date": "2025-11-17",
+    "laptime_ms": 146843
+  },
+  {
+    "car": "PORSCHE_911_RSR_2017",
+    "track": "RT_MACAU",
+    "date": "2025-11-17",
+    "laptime_ms": 142263
+  },
+  {
+    "car": "MCLAREN_650_GT3",
+    "track": "NORDSCHLEIFE-NORDSCHLEIFE",
+    "date": "2025-11-21",
+    "laptime_ms": 419736
+  },
+  {
+    "car": "TOYOTA_TS040",
+    "track": "IMOLA",
+    "date": "2025-11-29",
+    "laptime_ms": 92358
+  },
+  {
+    "car": "AUDI_R8_LMS_2016",
+    "track": "IMOLA",
+    "date": "2025-12-01",
+    "laptime_ms": 107462
+  },
+  {
+    "car": "AUDI_R18_ETRON_QUATTRO",
+    "track": "IMOLA",
+    "date": "2025-12-03",
+    "laptime_ms": 93875
+  },
+  {
+    "car": "AUDI_R8_PLUS",
+    "track": "SPA",
+    "date": "2025-12-06",
+    "laptime_ms": 172403
+  },
+  {
+    "car": "PORSCHE_911_RSR_2017",
+    "track": "MONZA",
+    "date": "2025-12-08",
+    "laptime_ms": 109614
+  },
+  {
+    "car": "LAMBORGHINI_HURACAN_ST",
+    "track": "ROAD_ATLANTA",
+    "date": "2025-12-11",
+    "laptime_ms": 84737
+  },
+  {
+    "car": "URD_DARCHE_992_23",
+    "track": "ROAD_ATLANTA",
+    "date": "2025-12-11",
+    "laptime_ms": 81819
+  },
+  {
+    "car": "FERRARI_488_GT3",
+    "track": "ROAD_ATLANTA",
+    "date": "2025-12-11",
+    "laptime_ms": 83809
+  },
+  {
+    "car": "LAMBORGHINI_HURACAN_GT3",
+    "track": "ROAD_ATLANTA",
+    "date": "2025-12-13",
+    "laptime_ms": 83194
+  },
+  {
+    "car": "AC_FRIENDS_FERRARI_499P_LMH",
+    "track": "ROAD_ATLANTA",
+    "date": "2025-12-13",
+    "laptime_ms": 78278
+  },
+  {
+    "car": "PORSCHE_911_RSR_2017",
+    "track": "ROAD_ATLANTA",
+    "date": "2025-12-15",
+    "laptime_ms": 81579
+  },
+  {
+    "car": "PORSCHE_963",
+    "track": "SPA",
+    "date": "2025-12-15",
+    "laptime_ms": 118939
+  },
+  {
+    "car": "PORSCHE_963",
+    "track": "LILSKI_WATKINS_GLEN-BOOT",
+    "date": "2025-12-16",
+    "laptime_ms": 93470
+  },
+  {
+    "car": "AUDI_R8_LMS_2016",
+    "track": "LILSKI_WATKINS_GLEN-BOOT",
+    "date": "2025-12-21",
+    "laptime_ms": 107348
+  },
+  {
+    "car": "PORSCHE_911_GT1",
+    "track": "NORDSCHLEIFE-NORDSCHLEIFE",
+    "date": "2025-12-23",
+    "laptime_ms": 398422
+  },
+  {
+    "car": "PORSCHE_919_HYBRID_2016",
+    "track": "IMOLA",
+    "date": "2025-12-26",
+    "laptime_ms": 90085
+  },
+  {
+    "car": "PORSCHE_963",
+    "track": "LEMANS_2017-NO_LIGHTS",
+    "date": "2025-12-28",
+    "laptime_ms": 208474
+  },
+  {
+    "car": "FERRARI_SF70H",
+    "track": "SPA",
+    "date": "2025-12-30",
+    "laptime_ms": 110281
+  },
+  {
+    "car": "PORSCHE_911_GT1",
+    "track": "LEMANS_2017-NO_LIGHTS",
+    "date": "2025-12-30",
+    "laptime_ms": 232220
   }
 ]
