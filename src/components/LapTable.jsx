@@ -12,8 +12,8 @@ function fmtLap(ms) {
 export default function LapTable() {
   const [rows, setRows] = useState([]);
   const [q, setQ] = useState({ track: "", car: "" });
-  const [sortKey, setSortKey] = useState("laptime_ms");
-  const [sortDir, setSortDir] = useState("asc");
+  const [sortKey, setSortKey] = useState("date");
+  const [sortDir, setSortDir] = useState("desc");
 
   useEffect(() => {
     fetch(DATA_URL).then((r) => r.json()).then(setRows);
