@@ -688,5 +688,11 @@
     "track": "LEMANS_2017-NO_LIGHTS",
     "date": "2025-12-30",
     "laptime_ms": 232220
+  },
+  {
+    "car": "PORSCHE_935_78_MOBY_DICK",
+    "track": "LEMANS_2017-NO_LIGHTS",
+    "date": "2025-12-30",
+    "laptime_ms": 248851
   }
 ]
